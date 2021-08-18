@@ -6,19 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  // Daily weather
   weatherData: any;
+  isDay: any = true;
   typeOfWeather: string;
   temperature: number;
   feelsLikeTemperature: number;
   humidity: number;
 
+  // 7 days forecast
+  weatherForecast: any;
+
   constructor() {}
 
   ngOnInit(): void {
     this.getWeatherData();
+    this.getWeatherForecast();
   }
 
-  // Météo du jour
+  // Daily weather
   getWeatherData() {
     fetch(
       'https://api.openweathermap.org/data/2.5/weather?q=lyon&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric'
@@ -40,14 +46,19 @@ export class HomeComponent implements OnInit {
     this.humidity = this.weatherData.main.humidity;
   }
 
-  // Météo des 7 prochains jours
+  // 7 days forecast
   getWeatherForecast() {
     fetch(
       '  https://api.openweathermap.org/data/2.5/onecall?lat=45.75&lon=4.85&exclude=current,minutely,hourly&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric'
     )
       .then((response) => response.json())
       .then((data) => {
-        this.setWeatherData(data);
+        this.setWeatherForecast(data);
       });
+  }
+
+  setWeatherForecast(data) {
+    this.weatherForecast = data;
+    console.log(this.weatherForecast);
   }
 }
