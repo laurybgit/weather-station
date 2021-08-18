@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  // Daily weather
   weatherData: any;
   isDay: any = true;
   typeOfWeather: string;
   temperature: number;
   feelsLikeTemperature: number;
   humidity: number;
-
-  // 7 days forecast
+  sunrise: string;
+  sunset: string;
+  today: string;
   weatherForecast: any;
 
   constructor() {}
@@ -22,9 +22,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getWeatherData();
     this.getWeatherForecast();
+    this.displayTodaysDate();
   }
 
-  // Daily weather
+  /* _________________________ 1. Daily weather __________________________ */
+
   getWeatherData() {
     fetch(
       'https://api.openweathermap.org/data/2.5/weather?q=lyon&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric'
@@ -44,9 +46,46 @@ export class HomeComponent implements OnInit {
     console.log(this.temperature);
     this.feelsLikeTemperature = this.weatherData.main.feels_like.toFixed(1);
     this.humidity = this.weatherData.main.humidity;
+    this.getSunriseTime();
+    this.getSunsetTime();
   }
 
-  // 7 days forecast
+  // Afficher correctement l'heure de lever / coucher du soleil
+  getSunriseTime() {
+    // Pourquoi new date ? Pas compris mais ok ! Le *1000 ramène à la bonne base.
+    let sunriseNumber = new Date(this.weatherData.sys.sunrise * 1000);
+    // toLocaleTimeString fait visiblement un formatage joli. On peut lui passer des options pour l'affichage. Ici pas de secondes.
+    this.sunrise = sunriseNumber.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    console.log(this.sunrise);
+  }
+
+  getSunsetTime() {
+    let sunsetNumber = new Date(this.weatherData.sys.sunset * 1000);
+    this.sunset = sunsetNumber.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    console.log(this.sunset);
+  }
+
+  // Formatage de la date
+  displayTodaysDate() {
+    let options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    let date = new Date();
+    //@ts-ignore
+    this.today = date.toLocaleDateString(undefined, options).toUpperCase();
+    console.log('Date du jour : ', this.today);
+  }
+
+  /* _________________________ 2. 7 days forecast _____________________________ */
   getWeatherForecast() {
     fetch(
       '  https://api.openweathermap.org/data/2.5/onecall?lat=45.75&lon=4.85&exclude=current,minutely,hourly&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric'
