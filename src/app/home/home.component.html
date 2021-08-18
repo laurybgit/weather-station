@@ -1,15 +1,22 @@
 <section>
   <!-- <p>{{ weatherData | json }}</p> -->
-  <p>{{ today }}</p>
+  <h3>{{ today }}</h3>
   <!-- Temps nuageux -->
-  <figure *ngIf="weatherType === 'nuageux'">
-    <img src="../../assets/img/nuageux.svg" alt="Temps nuageux" />
-  </figure>
+  <div *ngIf="weatherType === 'nuageux'">
+    <img src="../../assets/img/nuageux.svg" alt="nuageux" />
+  </div>
   <!-- Temps peu nuageux -->
-  <figure *ngIf="weatherType === 'peu nuageux'">
-    <img src="../../assets/img/peu-nuageux.svg" alt="Temps peu nuageux" />
-  </figure>
-  <p>{{ weatherType }}</p>
+  <div *ngIf="weatherType === 'peu nuageux' && isDay">
+    <img src="../../assets/img/peu-nuageux-jour.svg" alt="peu nuageux" />
+  </div>
+  <div *ngIf="weatherType === 'peu nuageux' && !isDay">
+    <img src="../../assets/img/peu-nuageux-nuit.svg" alt="peu nuageux" />
+  </div>
+  <!-- Ciel dégagé -->
+  <div *ngIf="weatherType === 'ciel dégagé' && !isDay">
+    <img src="../../assets/img/ciel-degage-nuit.svg" alt="ciel dégagé" />
+  </div>
+  <!-- <p>{{ weatherType }}</p> -->
   <h4>{{ temperature }} °C</h4>
   <h4>Température ressentie : {{ feelsLikeTemperature }} °C</h4>
   <h4>Humidité : {{ humidity }} %</h4>

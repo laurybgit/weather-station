@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   weatherData: any;
-  isDay: any = true;
+  isDay: boolean = true;
   weatherType: string;
   temperature: number;
   feelsLikeTemperature: number;
@@ -69,6 +69,9 @@ export class HomeComponent implements OnInit {
       minute: '2-digit',
     });
     console.log(this.sunset);
+    let today = new Date().toLocaleTimeString();
+    this.isDay = this.today < this.sunset ? true : false;
+    console.log('jour ou nuit ?', this.isDay);
   }
 
   // Formatage de la date
