@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   sunset: string;
   today: string;
   weatherForecast: any;
+  tomorrowTemperature: number;
 
   constructor() {}
 
@@ -99,5 +100,7 @@ export class HomeComponent implements OnInit {
   setWeatherForecast(data) {
     this.weatherForecast = data;
     console.log(this.weatherForecast);
+    this.tomorrowTemperature = this.weatherForecast.daily[0].temp.day;
+    console.log(this.tomorrowTemperature);
   }
 }
