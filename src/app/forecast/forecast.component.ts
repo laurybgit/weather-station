@@ -9,10 +9,10 @@ export class ForecastComponent implements OnInit {
   weatherForecast: any;
   dailyTemperatures: Array<Object>;
   today: Date;
-  today2: Date;
   tomorrow: any;
   minimumTemperature: number;
   maximumTemperature: number;
+  weatherType: string;
 
   constructor() {}
 
@@ -54,6 +54,11 @@ export class ForecastComponent implements OnInit {
     return this.maximumTemperature;
   }
 
+  getWeatherType(day: number) {
+    this.weatherType = this.weatherForecast.daily[day].weather[0].main;
+    return this.weatherType;
+  }
+
   setWeatherForecast(data) {
     this.weatherForecast = data;
     console.log(this.weatherForecast);
@@ -63,10 +68,21 @@ export class ForecastComponent implements OnInit {
         date: this.setTomorrowDate(1),
         min_temp: this.getMinimumTemperature(0),
         max_temp: this.getMaximumTemperature(0),
-        weather_type: 'lalala',
+        weather_type: this.getWeatherType(0),
       },
       {
+        day: 1,
         date: this.setTomorrowDate(2),
+        min_temp: this.getMinimumTemperature(1),
+        max_temp: this.getMaximumTemperature(1),
+        weather_type: this.getWeatherType(1),
+      },
+      {
+        day: 2,
+        date: this.setTomorrowDate(3),
+        min_temp: this.getMinimumTemperature(2),
+        max_temp: this.getMaximumTemperature(2),
+        weather_type: this.getWeatherType(2),
       },
     ];
   }

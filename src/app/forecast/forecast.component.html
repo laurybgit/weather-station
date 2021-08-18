@@ -1,5 +1,9 @@
 <div *ngFor="let day of dailyTemperatures">
+  <hr />
+  <h4>{{ day.date }}</h4>
   <h3>{{ day.min_temp }}</h3>
   <h3>{{ day.max_temp }}</h3>
-  <h3>{{ day.date }}</h3>
+  <div *ngIf="weatherType === 'Clouds'">
+    <h3>Temps nuageux</h3>
+  </div>
 </div>
