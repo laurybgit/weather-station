@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForecastComponent implements OnInit {
   weatherForecast: any;
-  today: Date;
   dailyTemperatures: Array<Object>;
-  constructor() {
-    this.today = new Date();
-  }
+  today: Date;
+  today2: Date;
+  tomorrow: any;
+  minimumTemperature: number;
+  maximumTemperature: number;
+
+  constructor() {}
 
   ngOnInit(): void {
     this.getWeatherForecast();
@@ -27,21 +30,43 @@ export class ForecastComponent implements OnInit {
       });
   }
 
-  getTomorrow() {}
+  setTomorrowDate(param: number) {
+    this.today = new Date();
+    this.today.setDate(this.today.getDate() + param);
+    let options = {
+      month: 'numeric',
+      day: 'numeric',
+    };
+    //@ts-ignore
+    this.tomorrow = this.today.toLocaleDateString(undefined, options);
+    return this.tomorrow;
+  }
+
+  getMinimumTemperature(day: number) {
+    this.minimumTemperature =
+      this.weatherForecast.daily[day].temp.min.toFixed(1);
+    return this.minimumTemperature;
+  }
+
+  getMaximumTemperature(day: number) {
+    this.maximumTemperature =
+      this.weatherForecast.daily[day].temp.max.toFixed(1);
+    return this.maximumTemperature;
+  }
 
   setWeatherForecast(data) {
     this.weatherForecast = data;
     console.log(this.weatherForecast);
     this.dailyTemperatures = [
       {
-        day: 1,
-        date: 'date',
-        temp_min: 'loulou',
-        temp_max: 'coucou',
+        day: 0,
+        date: this.setTomorrowDate(1),
+        min_temp: this.getMinimumTemperature(0),
+        max_temp: this.getMaximumTemperature(0),
         weather_type: 'lalala',
       },
       {
-        temp_min: 'hello',
+        date: this.setTomorrowDate(2),
       },
     ];
   }

@@ -1,16 +1,14 @@
-<main>
-  <section>
-    <!-- <p>{{ weatherData | json }}</p> -->
-    <p>{{ today }}</p>
-    <div *ngIf="weatherType === 'Clouds'">
-      <img
-        src="https://www.sciencesetavenir.fr/assets/img/2021/04/09/cover-r4x3w1000-607074c72f1ef-nature-3294543-1920.jpg"
-        alt="icône de temps nuageux"
-      />
-      <h3>Temps nuageux</h3>
-    </div>
-    <h4>{{ temperature }} °C</h4>
-    <h4>Température ressentie : {{ feelsLikeTemperature }} °C</h4>
-    <h4>Humidité : {{ humidity }} %</h4>
-  </section>
-</main>
+<section>
+  <!-- <p>{{ weatherData | json }}</p> -->
+  <p>{{ today }}</p>
+  <div *ngIf="weatherType === 'Clouds'">
+    <img
+      src="https://www.sciencesetavenir.fr/assets/img/2021/04/09/cover-r4x3w1000-607074c72f1ef-nature-3294543-1920.jpg"
+      alt="icône de temps nuageux"
+    />
+    <h3>Temps nuageux</h3>
+  </div>
+  <h4>{{ temperature }} °C</h4>
+  <h4>Température ressentie : {{ feelsLikeTemperature }} °C</h4>
+  <h4>Humidité : {{ humidity }} %</h4>
+</section>
