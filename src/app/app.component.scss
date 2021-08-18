@@ -1,8 +1,44 @@
+body {
+  font-size: 16px;
+}
+
 main {
+  font-size: 1rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
   hr {
     margin: 0;
   }
+}
+
+/* ------------------------------------- Ajustements responsive ------------------------------ */
+
+// grands écrans / haute résolution > 1600px
+@media screen and (min-width: 1600px) {
+  /*main {
+    border: 5px rgb(251, 255, 0) solid;
+  }*/
+}
+// ordinateurs portables / basse résolution, tablettes format portrait < 1599px
+@media screen and (max-width: 1599px) {
+  /*main {
+    border: 2px red solid;
+  }*/
+}
+
+// tablettes < 959px
+@media screen and (max-width: 959px) {
+  /*main {
+    border: 2px aqua solid;
+  }*/
+}
+
+// smartphones < 760px
+@media screen and (max-width: 760px) {
+  /*main {
+    border: 2px black solid;
+  }*/
 }

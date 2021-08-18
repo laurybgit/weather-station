@@ -22,7 +22,7 @@ export class ForecastComponent implements OnInit {
 
   getWeatherForecast() {
     fetch(
-      '  https://api.openweathermap.org/data/2.5/onecall?lat=45.75&lon=4.85&exclude=current,minutely,hourly&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric'
+      '  https://api.openweathermap.org/data/2.5/onecall?lat=45.75&lon=4.85&exclude=current,minutely,hourly&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric&lang=fr'
     )
       .then((response) => response.json())
       .then((data) => {
@@ -55,7 +55,7 @@ export class ForecastComponent implements OnInit {
   }
 
   getWeatherType(day: number) {
-    this.weatherType = this.weatherForecast.daily[day].weather[0].main;
+    this.weatherType = this.weatherForecast.daily[day].weather[0].description;
     return this.weatherType;
   }
 
@@ -64,25 +64,67 @@ export class ForecastComponent implements OnInit {
     console.log(this.weatherForecast);
     this.dailyTemperatures = [
       {
-        day: 0,
+        day: 1,
         date: this.setTomorrowDate(1),
         min_temp: this.getMinimumTemperature(0),
         max_temp: this.getMaximumTemperature(0),
         weather_type: this.getWeatherType(0),
       },
       {
-        day: 1,
+        day: 2,
         date: this.setTomorrowDate(2),
         min_temp: this.getMinimumTemperature(1),
         max_temp: this.getMaximumTemperature(1),
         weather_type: this.getWeatherType(1),
       },
       {
-        day: 2,
+        day: 3,
         date: this.setTomorrowDate(3),
         min_temp: this.getMinimumTemperature(2),
         max_temp: this.getMaximumTemperature(2),
         weather_type: this.getWeatherType(2),
+      },
+      {
+        day: 4,
+        date: this.setTomorrowDate(4),
+        min_temp: this.getMinimumTemperature(3),
+        max_temp: this.getMaximumTemperature(3),
+        weather_type: this.getWeatherType(3),
+      },
+      {
+        day: 5,
+        date: this.setTomorrowDate(5),
+        min_temp: this.getMinimumTemperature(4),
+        max_temp: this.getMaximumTemperature(4),
+        weather_type: this.getWeatherType(4),
+      },
+      {
+        day: 6,
+        date: this.setTomorrowDate(5),
+        min_temp: this.getMinimumTemperature(4),
+        max_temp: this.getMaximumTemperature(4),
+        weather_type: this.getWeatherType(4),
+      },
+      {
+        day: 7,
+        date: this.setTomorrowDate(6),
+        min_temp: this.getMinimumTemperature(5),
+        max_temp: this.getMaximumTemperature(5),
+        weather_type: this.getWeatherType(5),
+      },
+      {
+        day: 8,
+        date: this.setTomorrowDate(7),
+        min_temp: this.getMinimumTemperature(6),
+        max_temp: this.getMaximumTemperature(6),
+        weather_type: this.getWeatherType(6),
+      },
+      {
+        day: 9,
+        date: this.setTomorrowDate(8),
+        min_temp: this.getMinimumTemperature(7),
+        max_temp: this.getMaximumTemperature(7),
+        weather_type: this.getWeatherType(7),
       },
     ];
   }

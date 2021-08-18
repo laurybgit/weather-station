@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   getWeatherData() {
     fetch(
-      'https://api.openweathermap.org/data/2.5/weather?q=lyon&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric'
+      'https://api.openweathermap.org/data/2.5/weather?q=lyon&appid=b6aab60ab28ca4dab2c888b1d6537e0e&units=metric&lang=fr'
     )
       .then((response) => response.json())
       .then((data) => {
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   setWeatherData(data) {
     this.weatherData = data;
     console.log(data);
-    this.weatherType = this.weatherData.weather[0].main;
+    this.weatherType = this.weatherData.weather[0].description;
     console.log(this.weatherType);
     this.temperature = this.weatherData.main.temp.toFixed(1);
     console.log(this.temperature);
