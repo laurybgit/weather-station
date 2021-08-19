@@ -70,8 +70,8 @@ export class HomeComponent implements OnInit {
     });
     console.log(this.sunset);
     let today = new Date().toLocaleTimeString();
-    this.isDay = this.today < this.sunset ? true : false;
-    console.log('jour ou nuit ?', this.isDay);
+    this.isDay = today < this.sunset ? true : false;
+    console.log('jour ou nuit ?', this.isDay ? 'jour' : 'nuit');
   }
 
   // Formatage de la date

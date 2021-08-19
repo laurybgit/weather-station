@@ -1,9 +1,10 @@
 <section>
+  <h1>Hello Jean-Yves !</h1>
   <!-- <p>{{ weatherData | json }}</p> -->
   <h3>{{ today }}</h3>
   <!-- Temps nuageux -->
-  <div *ngIf="weatherType === 'nuageux'">
-    <img src="../../assets/img/nuageux.svg" alt="nuageux" />
+  <div *ngIf="weatherType === 'nuageux' || 'couvert'">
+    <img src="../../assets/img/nuageux.svg" alt="nuageux ou couvert" />
   </div>
   <!-- Temps peu nuageux -->
   <div *ngIf="weatherType === 'peu nuageux' && isDay">
@@ -18,6 +19,7 @@
   </div>
   <!-- <p>{{ weatherType }}</p> -->
   <h4>{{ temperature }} °C</h4>
-  <h4>Température ressentie : {{ feelsLikeTemperature }} °C</h4>
+  <h4 *ngIf="weatherType === 'nuageux' || 'couvert'">Nuageux</h4>
+  <h4>Ressenti : {{ feelsLikeTemperature }} °C</h4>
   <h4>Humidité : {{ humidity }} %</h4>
 </section>

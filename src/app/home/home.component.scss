@@ -1,9 +1,10 @@
 section {
-  background: rgb(2, 0, 36);
+  // background
+  background: rgb(172, 82, 221);
   background: linear-gradient(
     180deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(82, 82, 221, 1) 94%
+    rgba(172, 82, 221, 1) 0%,
+    rgba(4, 196, 254, 1) 100%
   );
   color: white;
   padding: 3rem;
@@ -15,6 +16,10 @@ section {
     img {
       width: 15rem;
     }
+  }
+
+  h1 {
+    text-align: center;
   }
 
   h3 {
