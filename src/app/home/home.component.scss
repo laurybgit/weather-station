@@ -22,25 +22,30 @@ section {
   padding: 3rem;
   border-radius: 1rem;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-}
 
-div {
-  text-align: center;
-  img {
-    width: 15rem;
+  div {
+    text-align: center;
+    img {
+      width: 15rem;
+    }
   }
-}
 
-h1,
-h2,
-h3,
-h4 {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 
-article + article {
-  position: relative;
-  bottom: 1.5rem;
+  article + article {
+    position: relative;
+    bottom: 1.5rem;
+  }
+
+  .rain {
+    position: relative;
+    bottom: 1.5rem;
+  }
 }
