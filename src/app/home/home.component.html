@@ -36,7 +36,7 @@
       />
     </div>
     <!-- nuit -->
-    <div *ngIf="weatherType === 'Clear' && !isDay">
+    <div id="night" *ngIf="weatherType === 'Clear' && !isDay">
       <img
         src="./assets/img/ciel-degage-nuit.svg"
         alt="{{ weatherTypeDescription }}"

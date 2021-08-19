@@ -13,7 +13,7 @@
   background: linear-gradient(
     180deg,
     rgba(24, 27, 110, 1) 0%,
-    rgba(3, 79, 129, 1) 100%
+    rgba(3, 112, 129, 1) 100%
   );
 }
 
@@ -47,5 +47,10 @@ section {
   .rain {
     position: relative;
     bottom: 1.5rem;
+  }
+
+  #night {
+    position: relative;
+    bottom: 1rem;
   }
 }
