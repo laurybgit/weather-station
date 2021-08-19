@@ -7,7 +7,7 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
+          "/ciel-degage-jour.svg",
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
