@@ -19,14 +19,14 @@ article {
 }
 
 // intermédiaire
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 680px) {
   article {
     margin-left: 1rem;
   }
 }
 
 // petit
-@media screen and (max-width: 695px) {
+@media screen and (max-width: 679px) {
   article {
     margin-left: 0rem;
   }
