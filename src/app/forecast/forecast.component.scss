@@ -1,5 +1,11 @@
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+article {
+  section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    h4 {
+      margin: 2rem 1rem;
+    }
+  }
 }

@@ -9,6 +9,7 @@ export class HomeComponent implements OnInit {
   weatherData: any;
   isDay: boolean = true;
   weatherType: string;
+  weatherTypeCapitalize: string;
   temperature: number;
   feelsLikeTemperature: number;
   humidity: number;

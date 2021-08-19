@@ -12,7 +12,6 @@ export class ForecastComponent implements OnInit {
   tomorrow: any;
   minimumTemperature: number;
   maximumTemperature: number;
-  weatherType: string;
 
   constructor() {}
 
@@ -34,8 +33,8 @@ export class ForecastComponent implements OnInit {
     this.today = new Date();
     this.today.setDate(this.today.getDate() + param);
     let options = {
-      month: 'numeric',
       day: 'numeric',
+      weekday: 'short',
     };
     //@ts-ignore
     this.tomorrow = this.today.toLocaleDateString(undefined, options);
@@ -43,20 +42,15 @@ export class ForecastComponent implements OnInit {
   }
 
   getMinimumTemperature(day: number) {
-    this.minimumTemperature =
-      this.weatherForecast.daily[day].temp.min.toFixed(1);
-    return this.minimumTemperature;
+    return this.weatherForecast.daily[day].temp.min.toFixed(1);
   }
 
   getMaximumTemperature(day: number) {
-    this.maximumTemperature =
-      this.weatherForecast.daily[day].temp.max.toFixed(1);
-    return this.maximumTemperature;
+    return this.weatherForecast.daily[day].temp.max.toFixed(1);
   }
 
   getWeatherType(day: number) {
-    this.weatherType = this.weatherForecast.daily[day].weather[0].description;
-    return this.weatherType;
+    return this.weatherForecast.daily[day].weather[0].description;
   }
 
   setWeatherForecast(data) {

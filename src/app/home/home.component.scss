@@ -1,34 +1,46 @@
-section {
-  // background
+/* Background */
+.day {
   background: rgb(172, 82, 221);
   background: linear-gradient(
     180deg,
     rgba(172, 82, 221, 1) 0%,
     rgba(4, 196, 254, 1) 100%
   );
+}
+
+.night {
+  background: rgb(24, 27, 110);
+  background: linear-gradient(
+    180deg,
+    rgba(24, 27, 110, 1) 0%,
+    rgba(3, 79, 129, 1) 100%
+  );
+}
+
+section {
   color: white;
   padding: 3rem;
   border-radius: 1rem;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
 
-  div {
-    text-align: center;
-    img {
-      width: 15rem;
-    }
+div {
+  text-align: center;
+  img {
+    width: 15rem;
   }
+}
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 
-  h4:first-of-type {
-    position: relative;
-    bottom: 3rem;
-  }
+article + article {
+  position: relative;
+  bottom: 1.5rem;
 }

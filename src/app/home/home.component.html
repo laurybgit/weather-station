@@ -1,26 +1,69 @@
-<section>
+<section [ngClass]="isDay ? 'day' : 'night'">
+  <!-- Titre -->
   <h1>Hello Jean-Yves !</h1>
-  <!-- <p>{{ weatherData | json }}</p> -->
-  <h3>{{ today }}</h3>
-  <!-- Temps nuageux -->
-  <div *ngIf="weatherType === 'nuageux' || 'couvert'">
-    <img src="../../assets/img/nuageux.svg" alt="nuageux ou couvert" />
-  </div>
-  <!-- Temps peu nuageux -->
-  <div *ngIf="weatherType === 'peu nuageux' && isDay">
-    <img src="../../assets/img/peu-nuageux-jour.svg" alt="peu nuageux" />
-  </div>
-  <div *ngIf="weatherType === 'peu nuageux' && !isDay">
-    <img src="../../assets/img/peu-nuageux-nuit.svg" alt="peu nuageux" />
-  </div>
-  <!-- Ciel dégagé -->
-  <div *ngIf="weatherType === 'ciel dégagé' && !isDay">
-    <img src="../../assets/img/ciel-degage-nuit.svg" alt="ciel dégagé" />
-  </div>
-  <!-- <p>{{ weatherType }}</p> -->
-  <h4>{{ temperature }} °C</h4>
-  <h3>Lyon</h3>
-  <h4 *ngIf="weatherType === 'nuageux' || 'couvert'">Nuageux</h4>
-  <h4>Ressenti : {{ feelsLikeTemperature }} °C</h4>
-  <h4>Humidité : {{ humidity }} %</h4>
+  <h2>{{ today }}</h2>
+
+  <!----------------------------- Type de météo icône animée ---------------------------------->
+  <article>
+    <!-- Temps nuageux -->
+    <!-- jour et nuit -->
+    <div *ngIf="weatherType === 'nuageux' || 'couvert'">
+      <img src="../../assets/img/nuageux.svg" alt="{{ weatherType }}" />
+    </div>
+
+    <!-- Temps peu nuageux -->
+    <!-- jour -->
+    <div *ngIf="weatherType === 'peu nuageux' && isDay">
+      <img
+        src="../../assets/img/peu-nuageux-jour.svg"
+        alt="{{ weatherType }}"
+      />
+    </div>
+    <!-- nuit -->
+    <div *ngIf="weatherType === 'peu nuageux' && !isDay">
+      <img
+        src="../../assets/img/peu-nuageux-nuit.svg"
+        alt="{{ weatherType }}"
+      />
+    </div>
+
+    <!-- Ciel dégagé -->
+    <!-- jour -->
+    <div *ngIf="weatherType === 'ciel dégagé' && isDay">
+      <img
+        src="../../assets/img/ciel-degage-jour.svg"
+        alt="{{ weatherType }}"
+      />
+    </div>
+    <!-- nuit -->
+    <div *ngIf="weatherType === 'ciel dégagé' && !isDay">
+      <img
+        src="../../assets/img/ciel-degage-nuit.svg"
+        alt="{{ weatherType }}"
+      />
+    </div>
+
+    <!-- Légère pluie -->
+    <!-- jour et nuit -->
+    <div *ngIf="weatherType === 'légère pluie'">
+      <img src="../../assets/img/petite-pluie.svg" alt="{{ weatherType }}" />
+    </div>
+  </article>
+
+  <!-- Température et ville -->
+  <article>
+    <h2>{{ temperature }} °C</h2>
+    <h2>Lyon</h2>
+    <br />
+
+    <!-- Type de météo texte  -->
+    <h4>Temps : {{ weatherType }}</h4>
+
+    <!-- Autres -->
+    <h4>Ressenti : {{ feelsLikeTemperature }} °C</h4>
+    <h4>Humidité : {{ humidity }} %</h4>
+    <br />
+    <h4>Lever du soleil : {{ sunrise }}</h4>
+    <h4>Coucher du soleil : {{ sunset }}</h4>
+  </article>
 </section>
