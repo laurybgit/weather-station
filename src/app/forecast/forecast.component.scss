@@ -9,3 +9,18 @@ article {
     }
   }
 }
+
+/* ________________________________ Ajustements responsive ___________________________ */
+// grands écrans
+@media screen and (min-width: 701px) {
+  article {
+    margin-left: 10rem;
+  }
+}
+
+// intermédiaire
+@media screen and (min-width: 700px) {
+  article {
+    margin-left: 3rem;
+  }
+}
