@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629378704671,
+  "timestamp": 1629379078442,
   "index": "/weather-station/index.html",
   "assetGroups": [
     {
@@ -53,14 +53,14 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/weather-station/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/weather-station/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/weather-station/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/weather-station/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/weather-station/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/weather-station/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/weather-station/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/weather-station/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/weather-station/assets/icons/icon-128x128.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-144x144.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-152x152.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-192x192.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-384x384.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-512x512.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-72x72.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
+    "/weather-station/assets/icons/icon-96x96.png": "784fa3e359508f1492a4f48923d7d483786d6f2e",
     "/weather-station/assets/img/ciel-degage-jour.svg": "c344ccdeba2e8b83a7018d195be6597cee681d68",
     "/weather-station/assets/img/ciel-degage-nuit.svg": "6053c3fc2107e2229b9de3e25fee3622169afd47",
     "/weather-station/assets/img/grosse-pluie.svg": "a991d17a3c956a1c47add0407f2ff2f550011625",
