@@ -10,8 +10,6 @@ export class ForecastComponent implements OnInit {
   dailyTemperatures: Array<Object>;
   today: Date;
   tomorrow: any;
-  minimumTemperature: number;
-  maximumTemperature: number;
 
   constructor() {}
 
