@@ -15,14 +15,14 @@
     <!-- jour -->
     <div *ngIf="weatherType === 'Clear' && isDay">
       <img
-        src="../../assets/img/ciel-degage-jour.svg"
+        src=".assets/img/ciel-degage-jour.svg"
         alt="{{ weatherTypeDescription }}"
       />
     </div>
     <!-- nuit -->
     <div *ngIf="weatherType === 'Clear' && !isDay">
       <img
-        src="../../assets/img/ciel-degage-nuit.svg"
+        src=".assets/img/ciel-degage-nuit.svg"
         alt="{{ weatherTypeDescription }}"
       />
     </div>
@@ -31,7 +31,7 @@
     <!-- jour et nuit -->
     <div *ngIf="weatherType === 'Rain'">
       <img
-        src="../../assets/img/grosse-pluie.svg"
+        src=".assets/img/grosse-pluie.svg"
         alt="{{ weatherTypeDescription }}"
       />
     </div>
@@ -40,7 +40,7 @@
     <!-- jour et nuit -->
     <div *ngIf="weatherType === 'Drizzle'">
       <img
-        src="../../assets/img/petite-pluie.svg"
+        src=".assets/img/petite-pluie.svg"
         alt="{{ weatherTypeDescription }}"
       />
     </div>
@@ -48,19 +48,13 @@
     <!-- Neige -->
     <!-- jour et nuit -->
     <div *ngIf="weatherType === 'Snow'">
-      <img
-        src="../../assets/img/neige.svg"
-        alt="{{ weatherTypeDescription }}"
-      />
+      <img src=".assets/img/neige.svg" alt="{{ weatherTypeDescription }}" />
     </div>
 
     <!-- Orage -->
     <!-- jour et nuit -->
     <div *ngIf="weatherType === 'Thunderstorm'">
-      <img
-        src="../../assets/img/orage.svg"
-        alt="{{ weatherTypeDescription }}"
-      />
+      <img src=".assets/img/orage.svg" alt="{{ weatherTypeDescription }}" />
     </div>
   </article>
 
