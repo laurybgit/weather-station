@@ -12,15 +12,22 @@ article {
 
 /* ________________________________ Ajustements responsive ___________________________ */
 // grands écrans
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 852px) {
   article {
     margin-left: 10rem;
   }
 }
 
 // intermédiaire
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 850px) {
   article {
-    margin-left: 3rem;
+    margin-left: 1rem;
+  }
+}
+
+// petit
+@media screen and (max-width: 695px) {
+  article {
+    margin-left: 0rem;
   }
 }
