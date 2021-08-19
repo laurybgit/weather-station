@@ -9,14 +9,13 @@ export class HomeComponent implements OnInit {
   weatherData: any;
   isDay: boolean = true;
   weatherType: string;
-  weatherTypeCapitalize: string;
+  weatherTypeDescription: string;
   temperature: number;
   feelsLikeTemperature: number;
   humidity: number;
   sunrise: string;
   sunset: string;
   today: string;
-  weatherForecast: any;
   tomorrowTemperature: number;
 
   constructor() {}
@@ -41,8 +40,9 @@ export class HomeComponent implements OnInit {
   setWeatherData(data) {
     this.weatherData = data;
     console.log(data);
-    this.weatherType = this.weatherData.weather[0].description;
-    console.log(this.weatherType);
+    this.weatherType = this.weatherData.weather[0].main;
+    console.log('type de météo', this.weatherType);
+    this.weatherTypeDescription = this.weatherData.weather[0].description;
     this.temperature = this.weatherData.main.temp.toFixed(1);
     console.log(this.temperature);
     this.feelsLikeTemperature = this.weatherData.main.feels_like.toFixed(1);

@@ -7,46 +7,63 @@
   <article>
     <!-- Temps nuageux -->
     <!-- jour et nuit -->
-    <div *ngIf="weatherType === 'nuageux' || 'couvert'">
-      <img src="../../assets/img/nuageux.svg" alt="{{ weatherType }}" />
-    </div>
-
-    <!-- Temps peu nuageux -->
-    <!-- jour -->
-    <div *ngIf="weatherType === 'peu nuageux' && isDay">
+    <div *ngIf="weatherType === 'Clouds' || 'Mist'">
       <img
-        src="../../assets/img/peu-nuageux-jour.svg"
-        alt="{{ weatherType }}"
-      />
-    </div>
-    <!-- nuit -->
-    <div *ngIf="weatherType === 'peu nuageux' && !isDay">
-      <img
-        src="../../assets/img/peu-nuageux-nuit.svg"
-        alt="{{ weatherType }}"
+        src="../../assets/img/nuageux.svg"
+        alt="{{ weatherTypeDescription }}"
       />
     </div>
 
     <!-- Ciel dégagé -->
     <!-- jour -->
-    <div *ngIf="weatherType === 'ciel dégagé' && isDay">
+    <div *ngIf="weatherType === 'Clear' && isDay">
       <img
         src="../../assets/img/ciel-degage-jour.svg"
-        alt="{{ weatherType }}"
+        alt="{{ weatherTypeDescription }}"
       />
     </div>
     <!-- nuit -->
-    <div *ngIf="weatherType === 'ciel dégagé' && !isDay">
+    <div *ngIf="weatherType === 'Clear' && !isDay">
       <img
         src="../../assets/img/ciel-degage-nuit.svg"
-        alt="{{ weatherType }}"
+        alt="{{ weatherTypeDescription }}"
       />
     </div>
 
-    <!-- Légère pluie -->
+    <!-- Pluie -->
     <!-- jour et nuit -->
-    <div *ngIf="weatherType === 'légère pluie'">
-      <img src="../../assets/img/petite-pluie.svg" alt="{{ weatherType }}" />
+    <div *ngIf="weatherType === 'Rain'">
+      <img
+        src="../../assets/img/grosse-pluie.svg"
+        alt="{{ weatherTypeDescription }}"
+      />
+    </div>
+
+    <!-- Bruine -->
+    <!-- jour et nuit -->
+    <div *ngIf="weatherType === 'Drizzle'">
+      <img
+        src="../../assets/img/petite-pluie.svg"
+        alt="{{ weatherTypeDescription }}"
+      />
+    </div>
+
+    <!-- Neige -->
+    <!-- jour et nuit -->
+    <div *ngIf="weatherType === 'Snow'">
+      <img
+        src="../../assets/img/neige.svg"
+        alt="{{ weatherTypeDescription }}"
+      />
+    </div>
+
+    <!-- Orage -->
+    <!-- jour et nuit -->
+    <div *ngIf="weatherType === 'Thunderstorm'">
+      <img
+        src="../../assets/img/orage.svg"
+        alt="{{ weatherTypeDescription }}"
+      />
     </div>
   </article>
 
@@ -57,7 +74,7 @@
     <br />
 
     <!-- Type de météo texte  -->
-    <h4>Temps : {{ weatherType }}</h4>
+    <h4>Temps : {{ weatherTypeDescription }}</h4>
 
     <!-- Autres -->
     <h4>Ressenti : {{ feelsLikeTemperature }} °C</h4>

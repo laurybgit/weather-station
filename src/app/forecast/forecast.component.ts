@@ -50,7 +50,7 @@ export class ForecastComponent implements OnInit {
   }
 
   getWeatherType(day: number) {
-    return this.weatherForecast.daily[day].weather[0].description;
+    return this.weatherForecast.daily[day].weather[0].main;
   }
 
   setWeatherForecast(data) {
