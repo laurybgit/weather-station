@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629385484874,
+  "timestamp": 1629388931205,
   "index": "/weather-station/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/weather-station/index.html",
-        "/weather-station/main.79fdc478b7c8b76022d5.js",
+        "/weather-station/main.a6057e8bf68fc80bef94.js",
         "/weather-station/manifest.webmanifest",
         "/weather-station/polyfills.00096ed7d93ed26ee6df.js",
         "/weather-station/runtime.7b63b9fd40098a2e8207.js",
@@ -72,8 +72,8 @@
     "/weather-station/assets/img/peu-nuageux-jour.svg": "489da3d4171b0c98579b5827c1c8931b5b2929df",
     "/weather-station/assets/img/peu-nuageux-nuit.svg": "404e1cecdeed1ca9000af6a284fa6ba51fd405db",
     "/weather-station/assets/img/pluie-soleil.svg": "e2aed31364ca8265a35bdcd6fcab62e0b1ed0e6b",
-    "/weather-station/index.html": "7524586879b75f5f02c44e9cf6b346768eb6dd61",
-    "/weather-station/main.79fdc478b7c8b76022d5.js": "61a574b55cfc7093df4b5a176a997e0ba4054dfe",
+    "/weather-station/index.html": "a57210e0f49c7a05949585dd1627aed65cc441f7",
+    "/weather-station/main.a6057e8bf68fc80bef94.js": "e28f6fc7b64278b1b851d0b5a4656ebf6d9af94c",
     "/weather-station/manifest.webmanifest": "2c588b825484ee2ec46ff01f41363bb80d4663b3",
     "/weather-station/polyfills.00096ed7d93ed26ee6df.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "/weather-station/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
