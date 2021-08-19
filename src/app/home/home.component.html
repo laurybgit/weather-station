@@ -5,10 +5,26 @@
 
   <!----------------------------- Type de météo icône animée ---------------------------------->
   <article>
-    <!-- Temps nuageux -->
+    <!-- Brouillard  -->
     <!-- jour et nuit -->
-    <div *ngIf="weatherType === 'Clouds' || 'Mist'">
+    <div *ngIf="weatherType === 'Mist'">
       <img src="./assets/img/nuageux.svg" alt="{{ weatherTypeDescription }}" />
+    </div>
+    <!-- Temps nuageux -->
+    <!-- jour -->
+    <div *ngIf="weatherType === 'Clouds' && isDay">
+      <img
+        src="./assets/img/peu-nuageux-jour.svg"
+        alt="{{ weatherTypeDescription }}"
+      />
+    </div>
+
+    <!-- nuit -->
+    <div *ngIf="weatherType === 'Clouds' && !isDay">
+      <img
+        src="./assets/img/peu-nuageux-nuit.svg"
+        alt="{{ weatherTypeDescription }}"
+      />
     </div>
 
     <!-- Ciel dégagé -->
