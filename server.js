@@ -8,13 +8,13 @@ function requireHTTPS(req, res, next) {
 const express = require("express");
 const app = express();
 // modifier après le ng build
-app.use(express.static("./dist/pocketrecettes"));
+app.use(express.static("./dist/weather-station"));
 
 app.use(requireHTTPS);
 
 app.get("/*", function (req, res) {
   // modifier après le ng build
-  res.sendFile("index.html", { root: "dist/pocketrecettes" });
+  res.sendFile("index.html", { root: "dist/weather-station" });
 });
 
 app.listen(process.env.PORT || 8080);
