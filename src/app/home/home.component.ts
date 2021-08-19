@@ -39,12 +39,12 @@ export class HomeComponent implements OnInit {
 
   setWeatherData(data) {
     this.weatherData = data;
-    console.log(data);
+    //console.log(data);
     this.weatherType = this.weatherData.weather[0].main;
-    console.log('type de météo', this.weatherType);
+    //('type de météo', this.weatherType);
     this.weatherTypeDescription = this.weatherData.weather[0].description;
     this.temperature = this.weatherData.main.temp.toFixed(1);
-    console.log(this.temperature);
+    //console.log(this.temperature);
     this.feelsLikeTemperature = this.weatherData.main.feels_like.toFixed(1);
     this.humidity = this.weatherData.main.humidity;
     this.getSunriseTime();
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
       hour: '2-digit',
       minute: '2-digit',
     });
-    console.log(this.sunrise);
+    //console.log(this.sunrise);
   }
 
   getSunsetTime() {
@@ -69,10 +69,10 @@ export class HomeComponent implements OnInit {
       hour: '2-digit',
       minute: '2-digit',
     });
-    console.log(this.sunset);
+    //console.log(this.sunset);
     let today = new Date().toLocaleTimeString();
     this.isDay = today < this.sunset ? true : false;
-    console.log('jour ou nuit ?', this.isDay ? 'jour' : 'nuit');
+    //console.log('jour ou nuit ?', this.isDay ? 'jour' : 'nuit');
   }
 
   // Formatage de la date
@@ -86,6 +86,6 @@ export class HomeComponent implements OnInit {
     let date = new Date();
     //@ts-ignore
     this.today = date.toLocaleDateString(undefined, options).toUpperCase();
-    console.log('Date du jour : ', this.today);
+    //console.log('Date du jour : ', this.today);
   }
 }

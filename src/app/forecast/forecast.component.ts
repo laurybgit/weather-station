@@ -55,7 +55,7 @@ export class ForecastComponent implements OnInit {
 
   setWeatherForecast(data) {
     this.weatherForecast = data;
-    console.log(this.weatherForecast);
+    //console.log(this.weatherForecast);
     this.dailyTemperatures = [
       {
         day: 1,
