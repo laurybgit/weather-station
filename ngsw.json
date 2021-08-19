@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629389404913,
+  "timestamp": 1629390890406,
   "index": "/weather-station/index.html",
   "assetGroups": [
     {
@@ -74,7 +74,7 @@
     "/weather-station/assets/img/pluie-soleil.svg": "e2aed31364ca8265a35bdcd6fcab62e0b1ed0e6b",
     "/weather-station/index.html": "83777397c792f2aeffcdcd078273b78905b423b5",
     "/weather-station/main.6a329bc0497b95368602.js": "4046168ecb5c7b8b1c54246613881f391d1858c9",
-    "/weather-station/manifest.webmanifest": "2c588b825484ee2ec46ff01f41363bb80d4663b3",
+    "/weather-station/manifest.webmanifest": "28bf05e7b4f3851829706b282c6851783ecede0b",
     "/weather-station/polyfills.00096ed7d93ed26ee6df.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "/weather-station/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/weather-station/styles.09e2c710755c8867a460.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"

@@ -1,6 +1,6 @@
 {
-  "name": "weather-station",
-  "short_name": "weather-station",
+  "name": "Ma météo",
+  "short_name": "Ma météo",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
