@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getWeatherData();
     this.displayTodaysDate();
+    this.setIsDay();
   }
 
   /* _________________________ Daily weather __________________________ */
@@ -47,32 +48,12 @@ export class HomeComponent implements OnInit {
     //console.log(this.temperature);
     this.feelsLikeTemperature = this.weatherData.main.feels_like.toFixed(1);
     this.humidity = this.weatherData.main.humidity;
-    this.getSunriseTime();
-    this.getSunsetTime();
   }
 
-  // Afficher correctement l'heure de lever / coucher du soleil
-  getSunriseTime() {
-    // Pourquoi new date ? Pas compris mais ok ! Le *1000 ramène à la bonne base.
-    let sunriseNumber = new Date(this.weatherData.sys.sunrise * 1000);
-    // toLocaleTimeString fait visiblement un formatage joli. On peut lui passer des options pour l'affichage. Ici pas de secondes.
-    this.sunrise = sunriseNumber.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-    //console.log(this.sunrise);
-  }
-
-  getSunsetTime() {
-    let sunsetNumber = new Date(this.weatherData.sys.sunset * 1000);
-    this.sunset = sunsetNumber.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-    //console.log(this.sunset);
-    let today = new Date().toLocaleTimeString();
-    this.isDay = this.sunrise > this.sunset ? true : false;
-    //console.log('jour ou nuit ?', this.isDay ? 'jour' : 'nuit');
+  setIsDay() {
+    const hours = new Date().getHours();
+    this.isDay = hours > 6 && hours < 21;
+    //console.log(this.isDay);
   }
 
   // Formatage de la date
