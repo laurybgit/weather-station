@@ -78,13 +78,13 @@
   <article>
     <h2>{{ temperature }} °C</h2>
     <h2>Lyon</h2>
+    <h2>{{ weatherTypeDescription }}</h2>
     <br />
 
     <!-- Type de météo texte  -->
-    <h4>Temps : {{ weatherTypeDescription }}</h4>
 
     <!-- Autres -->
-    <h4>Ressenti : {{ feelsLikeTemperature }} °C</h4>
+    <h4>Journée : {{ minTemperature }} °C / {{ maxTemperature }} °C</h4>
     <h4>Humidité : {{ humidity }} %</h4>
     <br />
     <h4>Lever du soleil : {{ sunrise }}</h4>

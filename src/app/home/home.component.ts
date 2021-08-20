@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   sunset: string;
   today: string;
   tomorrowTemperature: number;
+  maxTemperature: number;
+  minTemperature: number;
 
   constructor() {}
 
@@ -47,6 +49,8 @@ export class HomeComponent implements OnInit {
     //console.log(this.temperature);
     this.feelsLikeTemperature = this.weatherData.main.feels_like.toFixed(1);
     this.humidity = this.weatherData.main.humidity;
+    this.maxTemperature = this.weatherData.main.temp_max.toFixed(1);
+    this.minTemperature = this.weatherData.main.temp_min.toFixed(1);
     this.displaySunriseTime();
     this.displaySunsetTime();
     this.getIsDay();
