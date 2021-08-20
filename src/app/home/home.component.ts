@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getWeatherData();
     this.displayTodaysDate();
-    this.setIsDay();
   }
 
   /* _________________________ Daily weather __________________________ */
@@ -48,12 +47,43 @@ export class HomeComponent implements OnInit {
     //console.log(this.temperature);
     this.feelsLikeTemperature = this.weatherData.main.feels_like.toFixed(1);
     this.humidity = this.weatherData.main.humidity;
+    this.displaySunriseTime();
+    this.displaySunsetTime();
+    this.getIsDay();
   }
 
-  setIsDay() {
-    const hours = new Date().getHours();
-    this.isDay = hours > 6 && hours < 21;
+  // Checker quelle période du jour (jour nuit) on est
+  getIsDay() {
+    let sunset = new Date(this.weatherData.sys.sunset * 1000);
+    //console.log(sunset);
+    let today = new Date();
+    //console.log(today);
+    this.isDay = today < sunset ? true : false;
     //console.log(this.isDay);
+
+    /* si cela ne marche pas, version "à la main" sans récupérer les données locales : 
+    let hours = new Date().getHours(); 
+    this.isDay = hours > 6 && hours < 20; */
+  }
+
+  // Afficher correctement l'heure de lever / coucher du soleil
+  displaySunriseTime() {
+    let sunriseDate = new Date(this.weatherData.sys.sunrise * 1000);
+    // toLocaleTimeString fait un formatage joli. On peut lui passer des options pour l'affichage. Ici pas de secondes.
+    this.sunrise = sunriseDate.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    //console.log(this.sunrise);
+  }
+
+  displaySunsetTime() {
+    let sunsetDate = new Date(this.weatherData.sys.sunset * 1000);
+    this.sunset = sunsetDate.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    //console.log(this.sunset);
   }
 
   // Formatage de la date
