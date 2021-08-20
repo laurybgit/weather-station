@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   weatherData: any;
-  isDay: boolean = true;
+  isDay: boolean;
   weatherType: string;
   weatherTypeDescription: string;
   temperature: number;
@@ -56,10 +56,17 @@ export class HomeComponent implements OnInit {
   getIsDay() {
     let sunset = new Date(this.weatherData.sys.sunset * 1000);
     //console.log(sunset);
+    let sunrise = new Date(this.weatherData.sys.sunrise * 1000);
+    //console.log(sunrise);
     let today = new Date();
     //console.log(today);
-    this.isDay = today < sunset ? true : false;
-    //console.log(this.isDay);
+
+    if (today >= sunrise && today <= sunset) {
+      this.isDay = true;
+      //console.log(this.isDay);
+    } else {
+      this.isDay = false;
+    }
 
     /* si cela ne marche pas, version "à la main" sans récupérer les données locales : 
     let hours = new Date().getHours(); 
