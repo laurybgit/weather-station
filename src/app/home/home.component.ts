@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
       this.isDay = false;
     }
 
-    /* si cela ne marche pas, version "à la main" sans récupérer les données locales : 
+    /* si cela ne marche pas ou si besoin de simplifier, version "à la main" sans récupérer les données locales. Juste définir ce que l'on considère comme faisant partie du jour et comme faisant partie de la nuit. 
     let hours = new Date().getHours(); 
     this.isDay = hours > 6 && hours < 20; */
   }
